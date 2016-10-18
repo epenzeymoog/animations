@@ -2,38 +2,86 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 @charset "utf-8";
-
-// variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
-
-$spacing-unit:     30px;
-
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-// Width of the content area
-$content-width:    800px;
-
-$on-palm:          600px;
-$on-laptop:        800px;
-
-// Minima also includes a mixin for defining media queries.
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-
-// Import partials from the `minima` theme.
 @import "minima";
+
+body {
+	background-color: #F7F7FF;
+	overflow-x: hidden;
+  position: relative;
+  padding: 2em;
+}
+
+h1, h2, h3 {
+	font-family: 'Josefin Slab', serif;
+}
+
+p {
+	font-size: 16px;
+	line-height: 25px;
+}
+
+.left {
+	width: 100%;
+
+	@media (min-width: 700px) {
+		float: left;
+		margin: 0 1em 2em 0;
+		width: 50%;
+	}
+}
+
+.right {
+	width: 100%;
+
+	@media (min-width: 700px) {
+		float: right;
+		width: 45%;
+	}
+}
+
+.wrapper {
+	border: solid #68838B;
+	background-color: #CECEDC;
+	clear: both;
+	height: 14.25em;
+}
+
+.ball {
+ animation: bounce 1.5s infinite ease-in-out;
+ background: #E7F9FE;
+ border: 6px solid white;
+ border-radius: 10em;
+ height: 4.5em;
+ margin: 0 auto;
+ position: relative;
+ width: 4.5em;
+}
+
+@keyframes bounce {
+  0% { 
+    background: white;
+    margin-top: 9em;   
+  }
+  50% { 
+    background: #52D5F5;
+    margin-top: 0em; 
+  }
+  100% { 
+    background: white;
+    margin-top: 9em; 
+  }
+}
+
+.gist {
+	display: block;
+	width: 16em;
+
+	@media (min-width: 400px) {
+		width: 20em;
+	}
+}
+.gist .gist-meta {
+	display: none;
+}
+
+
